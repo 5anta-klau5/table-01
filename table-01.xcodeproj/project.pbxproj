@@ -13,6 +13,8 @@
 		AF94FAC41D4925E000C0B5A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF94FAC21D4925E000C0B5A3 /* Main.storyboard */; };
 		AF94FAC61D4925E000C0B5A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF94FAC51D4925E000C0B5A3 /* Assets.xcassets */; };
 		AF94FAC91D4925E000C0B5A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF94FAC71D4925E000C0B5A3 /* LaunchScreen.storyboard */; };
+		AF94FB461D4E58C200C0B5A3 /* img-pok.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF94FB451D4E58C200C0B5A3 /* img-pok.jpg */; };
+		AF94FB491D4E628700C0B5A3 /* CellType01.m in Sources */ = {isa = PBXBuildFile; fileRef = AF94FB481D4E628700C0B5A3 /* CellType01.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		AF94FAC51D4925E000C0B5A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF94FAC81D4925E000C0B5A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF94FACA1D4925E000C0B5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF94FB451D4E58C200C0B5A3 /* img-pok.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-pok.jpg"; sourceTree = "<group>"; };
+		AF94FB471D4E628700C0B5A3 /* CellType01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellType01.h; sourceTree = "<group>"; };
+		AF94FB481D4E628700C0B5A3 /* CellType01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellType01.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +67,13 @@
 				AF94FABD1D4925E000C0B5A3 /* AppDelegate.m */,
 				AF94FABF1D4925E000C0B5A3 /* ViewController.h */,
 				AF94FAC01D4925E000C0B5A3 /* ViewController.m */,
+				AF94FB471D4E628700C0B5A3 /* CellType01.h */,
+				AF94FB481D4E628700C0B5A3 /* CellType01.m */,
 				AF94FAC21D4925E000C0B5A3 /* Main.storyboard */,
 				AF94FAC51D4925E000C0B5A3 /* Assets.xcassets */,
 				AF94FAC71D4925E000C0B5A3 /* LaunchScreen.storyboard */,
 				AF94FACA1D4925E000C0B5A3 /* Info.plist */,
+				AF94FB441D4E58C200C0B5A3 /* Images */,
 				AF94FAB91D4925E000C0B5A3 /* Supporting Files */,
 			);
 			path = "table-01";
@@ -77,6 +85,14 @@
 				AF94FABA1D4925E000C0B5A3 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF94FB441D4E58C200C0B5A3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AF94FB451D4E58C200C0B5A3 /* img-pok.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +154,7 @@
 			files = (
 				AF94FAC91D4925E000C0B5A3 /* LaunchScreen.storyboard in Resources */,
 				AF94FAC61D4925E000C0B5A3 /* Assets.xcassets in Resources */,
+				AF94FB461D4E58C200C0B5A3 /* img-pok.jpg in Resources */,
 				AF94FAC41D4925E000C0B5A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +168,7 @@
 			files = (
 				AF94FAC11D4925E000C0B5A3 /* ViewController.m in Sources */,
 				AF94FABE1D4925E000C0B5A3 /* AppDelegate.m in Sources */,
+				AF94FB491D4E628700C0B5A3 /* CellType01.m in Sources */,
 				AF94FABB1D4925E000C0B5A3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +318,7 @@
 				AF94FACF1D4925E000C0B5A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
