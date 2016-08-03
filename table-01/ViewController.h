@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-- (IBAction)nextBtnPressed:(UIButton *)sender;
+//- (IBAction)nextBtnPressed:(UIButton *)sender;
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 

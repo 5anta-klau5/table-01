@@ -14,14 +14,14 @@
 @end
 
 @implementation ViewController
-int count = 1;
+int count = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self setTitle:[NSString stringWithFormat:@"Page #%d", count]];
     count++;
-     
+    [self setTitle:[NSString stringWithFormat:@"Page #%d", count]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,11 +34,11 @@ int count = 1;
         count--;
     }
 }
-
+/*
 - (IBAction)nextBtnPressed:(UIButton *)sender {
     NSLog(@"Button pressed");
 }
-
+*/
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
@@ -47,7 +47,7 @@ int count = 1;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return count;
+    return count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -70,6 +70,23 @@ int count = 1;
     if (!(indexPath.row == 0)) {
         ViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"MyVC"];
         [self.navigationController pushViewController:controller animated:YES];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    } else {
+        NSLog(@"0 row selected");
+        /*
+//        UIViewController *controllerForWeb = [UIViewController new];
+        UIViewController *controllerForWeb = [self.storyboard instantiateViewControllerWithIdentifier:@"VCForWeb"];
+        
+        UIWebView *webView = [UIWebView new];
+        NSString *urlString = @"https://www.google.com.ua";
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        [webView loadRequest:urlRequest];
+        
+        [controllerForWeb.view addSubview:webView];
+        [self.navigationController pushViewController:controllerForWeb animated:YES];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+         */
     }
 }
 
