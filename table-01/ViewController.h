@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+- (IBAction)nextBtnPressed:(UIButton *)sender;
 
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+
+//@property (strong, nonatomic) NSMutableArray *dataForTable;
+//@property(weak, nonatomic) IBOutlet UIButton * nextBtn;
 @end
 
