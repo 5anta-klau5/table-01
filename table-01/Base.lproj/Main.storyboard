@@ -66,7 +66,6 @@
                                             <outlet property="cellImageView" destination="Mwo-Jv-qvk" id="6fC-hi-B4S"/>
                                             <outlet property="nameLabel" destination="NcN-La-VFz" id="bcZ-P8-VKP"/>
                                             <outlet property="subNameLabel" destination="zn6-Vn-qgp" id="JfS-PR-tjV"/>
-                                            <segue destination="CLC-pD-QbB" kind="show" id="bGL-oa-IyA"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellType02" textLabel="cXX-N4-N4F" style="IBUITableViewCellStyleDefault" id="UGD-2A-INX">
@@ -134,7 +133,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5io-b4-EMz" secondAttribute="trailing" id="C2W-Uc-JF3"/>
                             <constraint firstItem="5io-b4-EMz" firstAttribute="bottom" secondItem="a7a-TB-X5t" secondAttribute="top" id="Zgb-bs-F5B"/>
-                            <constraint firstItem="5io-b4-EMz" firstAttribute="top" secondItem="dJm-OJ-atU" secondAttribute="bottom" constant="39" id="f2o-OD-iw2"/>
+                            <constraint firstItem="5io-b4-EMz" firstAttribute="top" secondItem="dJm-OJ-atU" secondAttribute="bottom" constant="-5" id="f2o-OD-iw2"/>
                             <constraint firstItem="5io-b4-EMz" firstAttribute="leading" secondItem="wiQ-at-Mdj" secondAttribute="leading" id="f84-a5-YVZ"/>
                         </constraints>
                     </view>

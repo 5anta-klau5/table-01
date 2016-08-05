@@ -73,11 +73,11 @@ int count = 0;
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     } else {
         NSLog(@"0 row selected");
-        /*
-//        UIViewController *controllerForWeb = [UIViewController new];
-        UIViewController *controllerForWeb = [self.storyboard instantiateViewControllerWithIdentifier:@"VCForWeb"];
         
-        UIWebView *webView = [UIWebView new];
+        UIViewController *controllerForWeb = [UIViewController new];
+//        UIViewController *controllerForWeb = [self.storyboard instantiateViewControllerWithIdentifier:@"VCForWeb"];
+        
+        UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 414, 736)];
         NSString *urlString = @"https://www.google.com.ua";
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
@@ -86,7 +86,7 @@ int count = 0;
         [controllerForWeb.view addSubview:webView];
         [self.navigationController pushViewController:controllerForWeb animated:YES];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-         */
+        
     }
 }
 
