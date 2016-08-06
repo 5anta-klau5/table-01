@@ -56,11 +56,11 @@ int count = 0;
         cell.nameLabel.text = @"First name";
         cell.subNameLabel.text = @"Subname 1st";
         cell.cellImageView.image = [UIImage imageNamed:@"img-pok.jpg"];
-        //    NSLog(@"row:%ld",(long)indexPath.row);
         return cell;
     } else {
         UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CellType02" forIndexPath:indexPath];
-        cell.textLabel.text = @"Some title";
+//        cell.textLabel.text = @"Some cell";
+        cell.textLabel.text = [NSString stringWithFormat:@"Some cell %ld", (long)indexPath.row];
         return cell;
     }
     
@@ -72,12 +72,13 @@ int count = 0;
         [self.navigationController pushViewController:controller animated:YES];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     } else {
-        NSLog(@"0 row selected");
         
         UIViewController *controllerForWeb = [UIViewController new];
 //        UIViewController *controllerForWeb = [self.storyboard instantiateViewControllerWithIdentifier:@"VCForWeb"];
+        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+        CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
         
-        UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 414, 736)];
+        UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
         NSString *urlString = @"https://www.google.com.ua";
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
@@ -86,7 +87,8 @@ int count = 0;
         [controllerForWeb.view addSubview:webView];
         [self.navigationController pushViewController:controllerForWeb animated:YES];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        
+     
+       
     }
 }
 
