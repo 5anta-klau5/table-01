@@ -83,6 +83,7 @@ int count = 0;
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
         [webView loadRequest:urlRequest];
+        webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         
         [controllerForWeb.view addSubview:webView];
         [self.navigationController pushViewController:controllerForWeb animated:YES];
