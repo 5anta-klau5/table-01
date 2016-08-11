@@ -56,6 +56,10 @@ int count = 0;
         cell.nameLabel.text = @"First name";
         cell.subNameLabel.text = @"Subname 1st";
         cell.cellImageView.image = [UIImage imageNamed:@"img-pok.jpg"];
+        cell.cellImageView.layer.cornerRadius = cell.cellImageView.frame.size.width / 2;
+        cell.cellImageView.clipsToBounds = YES;
+        cell.cellImageView.layer.borderWidth = 1.0f;
+        cell.cellImageView.layer.borderColor = [UIColor colorWithRed:30/255 green:144/255 blue:1 alpha:1.0].CGColor;
         return cell;
     } else {
         UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CellType02" forIndexPath:indexPath];
