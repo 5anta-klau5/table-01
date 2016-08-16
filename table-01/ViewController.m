@@ -16,6 +16,11 @@
 @implementation ViewController
 int count = 0;
 
+typedef enum:NSUInteger {
+    WebCellType,
+    SimpleCellType
+} CellType;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -29,7 +34,7 @@ int count = 0;
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidDisappear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated {
     if (![self.navigationController.viewControllers containsObject:self]) {
         count--;
     }
@@ -51,7 +56,9 @@ int count = 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
+    CellType type = [self cellTypeForIndexPath:indexPath];
+    
+    if (type == WebCellType) {
         CellType01 *cell = (CellType01 *)[tableView dequeueReusableCellWithIdentifier:@"CellType01" forIndexPath:indexPath];
         cell.nameLabel.text = @"First name";
         cell.subNameLabel.text = @"Subname 1st";
@@ -63,38 +70,50 @@ int count = 0;
         return cell;
     } else {
         UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CellType02" forIndexPath:indexPath];
-//        cell.textLabel.text = @"Some cell";
         cell.textLabel.text = [NSString stringWithFormat:@"Some cell %ld", (long)indexPath.row];
         return cell;
     }
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!(indexPath.row == 0)) {
-        ViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"MyVC"];
-        [self.navigationController pushViewController:controller animated:YES];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (CellType)cellTypeForIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return WebCellType;
     } else {
-        
-        UIViewController *controllerForWeb = [UIViewController new];
-//        UIViewController *controllerForWeb = [self.storyboard instantiateViewControllerWithIdentifier:@"VCForWeb"];
-        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-        CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-        
-        UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
-        NSString *urlString = @"https://www.google.com.ua";
-        NSURL *url = [NSURL URLWithString:urlString];
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-        [webView loadRequest:urlRequest];
-        webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        
-        [controllerForWeb.view addSubview:webView];
-        [self.navigationController pushViewController:controllerForWeb animated:YES];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-     
-       
+        return SimpleCellType;
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CellType type = [self cellTypeForIndexPath:indexPath];
+    
+    if (type == SimpleCellType) {
+        [self openTheSameViewController];
+    } else {
+        [self openWebViewController];
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)openTheSameViewController {
+    ViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"MyVC"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)openWebViewController {
+    UIViewController *controllerForWeb = [UIViewController new];
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
+    NSString *urlString = @"https://www.google.com.ua";
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:urlRequest];
+    webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+    [controllerForWeb.view addSubview:webView];
+    [self.navigationController pushViewController:controllerForWeb animated:YES];
 }
 
 @end
