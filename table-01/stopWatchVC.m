@@ -9,9 +9,10 @@
 #import "stopWatchVC.h"
 
 @implementation stopWatchVC
-int seconds = 0;
-int minutes = 0;
+
 BOOL started = FALSE;
+double startTime;
+double beforeStopTime = 0.0;
 
 - (IBAction)pushStartStopBtn:(id)sender {
     [self startStopCount];
@@ -24,12 +25,16 @@ BOOL started = FALSE;
 - (void)startStopCount {
     if (!started) {
         [self startTimer];
+        
         [self.startStopBtn setTitle:@"Stop" forState:UIControlStateNormal];
         [self.startStopBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         started = TRUE;
 
     } else {
+        double stopTime = [NSDate timeIntervalSinceReferenceDate];
+        beforeStopTime += stopTime - startTime;
         [self stopTimer];
+        
         [self.startStopBtn setTitle:@"Start" forState:UIControlStateNormal];
         [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
         started = FALSE;
@@ -37,17 +42,18 @@ BOOL started = FALSE;
 }
 
 - (void)resetCount {
-    seconds = 0;
-    minutes = 0;
     [self stopTimer];
+    beforeStopTime = 0.0;
+    startTime = 0.0;
     [self.startStopBtn setTitle:@"Start" forState:UIControlStateNormal];
     [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     started = FALSE;
-    [self.watchText setText:@"00 : 00"];
+    [self.watchText setText:@"00:00.00"];
 }
 
 - (void)startTimer {
-    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+    startTime = [NSDate timeIntervalSinceReferenceDate];
+    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
                                                     target:self
                                                   selector:@selector(ticTac)
                                                   userInfo:nil
@@ -55,17 +61,22 @@ BOOL started = FALSE;
 }
 
 - (void)stopTimer {
-    if (self.myTimer != nil) {
+    if ([self.myTimer isValid]) {
         [self.myTimer invalidate];
     }
-    self.myTimer = nil;
+//    self.myTimer = nil;
 }
 
 - (void)ticTac {
     if (started) {
-        NSString *sec = [NSString stringWithFormat:@"%i", seconds];
+        double currentTime = [NSDate timeIntervalSinceReferenceDate];
+        double totalSeconds = currentTime - startTime + beforeStopTime;
+        double seconds = fmod(totalSeconds, 60.0);
+        int minutes = (int)totalSeconds / 60;
+        
+        NSString *sec = [NSString stringWithFormat:@"%.2f", seconds];
         if (seconds < 10) {
-            sec = [NSString stringWithFormat:@"0%i", seconds];
+            sec = [NSString stringWithFormat:@"0%.2f", seconds];
         }
         
         NSString *min = [NSString stringWithFormat:@"%i", minutes];
@@ -73,14 +84,9 @@ BOOL started = FALSE;
             min = [NSString stringWithFormat:@"0%i", minutes];
         }
         
-        NSString *time = [NSString stringWithFormat:@"%@ : %@", min, sec];
+        NSString *time = [NSString stringWithFormat:@"%@:%@", min, sec];
         [self.watchText setText:time];
         
-        seconds++;
-        if (seconds > 59) {
-            seconds = 0;
-            minutes++;
-        }
     }
 }
 

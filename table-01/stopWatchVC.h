@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <Math.h>
 
 @interface stopWatchVC : ViewController {
     NSTimer *myTimer;
