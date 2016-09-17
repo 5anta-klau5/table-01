@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF15BDC51D63AA5000780504 /* number-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AF15BDC31D63AA5000780504 /* number-1.png */; };
 		AF15BDC61D63AA5000780504 /* number-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF15BDC41D63AA5000780504 /* number-2.png */; };
+		AF67F63C1D8D4B2B00856F99 /* CircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF67F63B1D8D4B2B00856F99 /* CircleCell.m */; };
 		AF94FABB1D4925E000C0B5A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF94FABA1D4925E000C0B5A3 /* main.m */; };
 		AF94FABE1D4925E000C0B5A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF94FABD1D4925E000C0B5A3 /* AppDelegate.m */; };
 		AF94FAC11D4925E000C0B5A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF94FAC01D4925E000C0B5A3 /* ViewController.m */; };
@@ -23,6 +24,8 @@
 /* Begin PBXFileReference section */
 		AF15BDC31D63AA5000780504 /* number-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "number-1.png"; sourceTree = "<group>"; };
 		AF15BDC41D63AA5000780504 /* number-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "number-2.png"; sourceTree = "<group>"; };
+		AF67F63A1D8D4B2B00856F99 /* CircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleCell.h; sourceTree = "<group>"; };
+		AF67F63B1D8D4B2B00856F99 /* CircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleCell.m; sourceTree = "<group>"; };
 		AF94FAB61D4925E000C0B5A3 /* table-01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "table-01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF94FABA1D4925E000C0B5A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF94FABC1D4925E000C0B5A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +79,8 @@
 				AF94FAC01D4925E000C0B5A3 /* ViewController.m */,
 				AF94FB471D4E628700C0B5A3 /* CellType01.h */,
 				AF94FB481D4E628700C0B5A3 /* CellType01.m */,
+				AF67F63A1D8D4B2B00856F99 /* CircleCell.h */,
+				AF67F63B1D8D4B2B00856F99 /* CircleCell.m */,
 				AFE72BE11D6F6D9200A2FF70 /* stopWatchVC.h */,
 				AFE72BE21D6F6D9200A2FF70 /* stopWatchVC.m */,
 				AF94FAC21D4925E000C0B5A3 /* Main.storyboard */,
@@ -184,6 +189,7 @@
 				AF94FB491D4E628700C0B5A3 /* CellType01.m in Sources */,
 				AFE72BE31D6F6D9200A2FF70 /* stopWatchVC.m in Sources */,
 				AF94FABB1D4925E000C0B5A3 /* main.m in Sources */,
+				AF67F63C1D8D4B2B00856F99 /* CircleCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
