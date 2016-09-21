@@ -24,7 +24,8 @@ double lastCircleTime = 0.0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    circleList = [[NSMutableArray alloc] init];
+//    circleList = [[NSMutableArray alloc] init];
+    circleList = [NSMutableArray arrayWithCapacity:50];
 }
 
 
@@ -102,6 +103,7 @@ double lastCircleTime = 0.0;
                                                   selector:@selector(ticTac)
                                                   userInfo:nil
                                                    repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.myTimer forMode:NSRunLoopCommonModes];
 }
 
 - (void)stopTimer {
