@@ -31,8 +31,8 @@ double lastCircleTime = 0.0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-//    circleList = [[NSMutableArray alloc] init];
-    circleList = [NSMutableArray arrayWithCapacity:50];
+    circleList = [[NSMutableArray alloc] init];
+//    circleList = [NSMutableArray arrayWithCapacity:50];
 }
 
 
@@ -48,12 +48,13 @@ double lastCircleTime = 0.0;
     if (watchStage == ready || watchStage == paused) {
         watchStage = started;
         [self startTimer];
-        [self.startStopBtn setTitle:@"Pause" forState:UIControlStateNormal];
-        [self.startStopBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        
-        self.resetBtn.enabled = YES;
-        [self.resetBtn setTitle:@"Circle" forState:UIControlStateNormal];
-        [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [self.startStopBtn setTitle:@"Pause" forState:UIControlStateNormal];
+//        [self.startStopBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//        
+//        self.resetBtn.enabled = YES;
+//        [self.resetBtn setTitle:@"Circle" forState:UIControlStateNormal];
+//        [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self changeButtons];
         return;
     }
 
@@ -63,12 +64,13 @@ double lastCircleTime = 0.0;
         beforeStopCircleTime += stopTime - lastCircleTime;
         [self stopTimer];
         
-        [self.startStopBtn setTitle:@"Resume" forState:UIControlStateNormal];
-        [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-        
-        [self.resetBtn setTitle:@"Reset" forState:UIControlStateNormal];
-        [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [self.startStopBtn setTitle:@"Resume" forState:UIControlStateNormal];
+//        [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+//        
+//        [self.resetBtn setTitle:@"Reset" forState:UIControlStateNormal];
+//        [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         watchStage = paused;
+        [self changeButtons];
         return;
     }
 }
@@ -91,19 +93,51 @@ double lastCircleTime = 0.0;
         beforeStopCircleTime = 0.0;
         lastCircleTime = 0.0;
         [circleList removeAllObjects];
+//        [self.startStopBtn setTitle:@"Start" forState:UIControlStateNormal];
+//        [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+//        [self.resetBtn setTitle:@"Circle" forState:UIControlStateNormal];
+//        [self.resetBtn setTitleColor:[UIColor colorWithRed:85/255.0
+//                                                     green:85/255.0
+//                                                      blue:85/255.0
+//                                                     alpha:1.0] forState:UIControlStateNormal];
+//        self.resetBtn.enabled = NO;
+        watchStage = ready;
+        [self changeButtons];
+        [self.watchText setText:@"00:00.00"];
+        [self.circleTimeText setText:@"00:00.00"];
+    }
+    [self.circleTable reloadData];
+}
+
+- (void)changeButtons {
+    if (watchStage == started) {
+        [self.startStopBtn setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.startStopBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        
+        self.resetBtn.enabled = YES;
+        [self.resetBtn setTitle:@"Circle" forState:UIControlStateNormal];
+        [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+    
+    if (watchStage == paused) {
+        [self.startStopBtn setTitle:@"Resume" forState:UIControlStateNormal];
+        [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+        
+        [self.resetBtn setTitle:@"Reset" forState:UIControlStateNormal];
+        [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+    
+    if (watchStage == ready) {
         [self.startStopBtn setTitle:@"Start" forState:UIControlStateNormal];
         [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+        
         [self.resetBtn setTitle:@"Circle" forState:UIControlStateNormal];
         [self.resetBtn setTitleColor:[UIColor colorWithRed:85/255.0
                                                      green:85/255.0
                                                       blue:85/255.0
                                                      alpha:1.0] forState:UIControlStateNormal];
         self.resetBtn.enabled = NO;
-        watchStage = ready;
-        [self.watchText setText:@"00:00.00"];
-        [self.circleTimeText setText:@"00:00.00"];
     }
-    [self.circleTable reloadData];
 }
 
 - (void)startTimer {
