@@ -8,6 +8,7 @@
 
 #import "stopWatchVC.h"
 #import "CircleCell.h"
+#import "stopWatchVC+StringsFormat.h"
 
 @implementation stopWatchVC
 {
@@ -138,6 +139,7 @@ double lastCircleTime = 0.0;
                                                      alpha:1.0] forState:UIControlStateNormal];
         self.resetBtn.enabled = NO;
     }
+
 }
 
 - (void)startTimer {
@@ -162,38 +164,42 @@ double lastCircleTime = 0.0;
     if (watchStage == started) {
         double currentTime = [NSDate timeIntervalSinceReferenceDate];
         double totalSeconds = currentTime - startTime + beforeStopTime;
-        double seconds = fmod(totalSeconds, 60.0);
-        int minutes = (int)totalSeconds / 60;
+//        double seconds = fmod(totalSeconds, 60.0);
+//        int minutes = (int)totalSeconds / 60;
         
         double circleTime = currentTime - lastCircleTime + beforeStopCircleTime;
-        double circleSeconds = fmod(circleTime, 60.0);
-        int circleMinutes = (int)circleTime / 60;
+//        double circleSeconds = fmod(circleTime, 60.0);
+//        int circleMinutes = (int)circleTime / 60;
         
-        NSString *sec = [NSString stringWithFormat:@"%.2f", seconds];
-        if (seconds < 10) {
-            sec = [NSString stringWithFormat:@"0%.2f", seconds];
-        }
+//        NSString *sec = [NSString stringWithFormat:@"%.2f", seconds];
+//        if (seconds < 10) {
+//            sec = [NSString stringWithFormat:@"0%.2f", seconds];
+//        }
+//        
+//        NSString *min = [NSString stringWithFormat:@"%i", minutes];
+//        if (minutes < 10) {
+//            min = [NSString stringWithFormat:@"0%i", minutes];
+//        }
+//        
+//        NSString *timeText = [NSString stringWithFormat:@"%@:%@", min, sec];
         
-        NSString *min = [NSString stringWithFormat:@"%i", minutes];
-        if (minutes < 10) {
-            min = [NSString stringWithFormat:@"0%i", minutes];
-        }
-        
-        NSString *timeText = [NSString stringWithFormat:@"%@:%@", min, sec];
+        NSString *timeText = [self createTimeFromSeconds:totalSeconds];
         [self.watchText setText:timeText];
         
         
-        NSString *circleSec = [NSString stringWithFormat:@"%.2f", circleSeconds];
-        if (circleSeconds < 10) {
-            circleSec = [NSString stringWithFormat:@"0%.2f", circleSeconds];
-        }
+//        NSString *circleSec = [NSString stringWithFormat:@"%.2f", circleSeconds];
+//        if (circleSeconds < 10) {
+//            circleSec = [NSString stringWithFormat:@"0%.2f", circleSeconds];
+//        }
+//        
+//        NSString *circleMin = [NSString stringWithFormat:@"%i", circleMinutes];
+//        if (circleMinutes < 10) {
+//            circleMin = [NSString stringWithFormat:@"0%i", circleMinutes];
+//        }
+//        
+//        NSString *circleTimeText = [NSString stringWithFormat:@"%@:%@", circleMin, circleSec];
         
-        NSString *circleMin = [NSString stringWithFormat:@"%i", circleMinutes];
-        if (circleMinutes < 10) {
-            circleMin = [NSString stringWithFormat:@"0%i", circleMinutes];
-        }
-        
-        NSString *circleTimeText = [NSString stringWithFormat:@"%@:%@", circleMin, circleSec];
+        NSString *circleTimeText = [self createTimeFromSeconds:circleTime];
         [self.circleTimeText setText:circleTimeText];
         
     }
