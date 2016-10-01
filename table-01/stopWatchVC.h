@@ -1,5 +1,5 @@
 //
-//  stopWatchVC.h
+//  StopwatchVC.h
 //  table-01
 //
 //  Created by Serhii Serhiienko on 8/25/16.
@@ -9,7 +9,7 @@
 #import "UIKit/UIKit.h"
 #import <Math.h>
 
-@interface stopWatchVC : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+@interface StopwatchVC : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     NSTimer *myTimer;
 }
 

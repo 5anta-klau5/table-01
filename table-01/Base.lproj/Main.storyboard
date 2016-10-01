@@ -8,7 +8,7 @@
         <!--Item 2-->
         <scene sceneID="QX4-Ad-PXD">
             <objects>
-                <viewController id="aY6-1k-t4S" customClass="stopWatchVC" sceneMemberID="viewController">
+                <viewController id="aY6-1k-t4S" customClass="StopwatchVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mFQ-QP-ETs"/>
                         <viewControllerLayoutGuide type="bottom" id="cul-dd-smS"/>

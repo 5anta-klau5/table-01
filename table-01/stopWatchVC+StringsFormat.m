@@ -1,21 +1,21 @@
 //
-//  stopWatchVC+StringsFormat.m
+//  StopwatchVC+StringsFormat.m
 //  table-01
 //
 //  Created by Serhii Serhiienko on 9/26/16.
 //  Copyright © 2016 Serhii Serhiienko. All rights reserved.
 //
 
-#import "stopWatchVC+StringsFormat.h"
+#import "StopwatchVC+StringsFormat.h"
 
-@implementation stopWatchVC (StringsFormat)
+@implementation StopwatchVC (StringsFormat)
 
 - (NSString *)createTimeFromSeconds:(double)seconds {
     double extraSeconds = fmod(seconds, 60.0);
     int minutes = (int)seconds / 60;
     
     NSString *sec = [NSString stringWithFormat:@"%.2f", extraSeconds];
-    if (seconds < 10) {
+    if (extraSeconds < 10) {
         sec = [NSString stringWithFormat:@"0%.2f", extraSeconds];
     }
     

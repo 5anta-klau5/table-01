@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF15BDC51D63AA5000780504 /* number-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AF15BDC31D63AA5000780504 /* number-1.png */; };
 		AF15BDC61D63AA5000780504 /* number-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF15BDC41D63AA5000780504 /* number-2.png */; };
-		AF46EA771D99A03B004064DE /* stopWatchVC+StringsFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46EA761D99A03B004064DE /* stopWatchVC+StringsFormat.m */; };
+		AF46EA771D99A03B004064DE /* StopwatchVC+StringsFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = AF46EA761D99A03B004064DE /* StopwatchVC+StringsFormat.m */; };
 		AF67F63C1D8D4B2B00856F99 /* CircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF67F63B1D8D4B2B00856F99 /* CircleCell.m */; };
 		AF94FABB1D4925E000C0B5A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF94FABA1D4925E000C0B5A3 /* main.m */; };
 		AF94FABE1D4925E000C0B5A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF94FABD1D4925E000C0B5A3 /* AppDelegate.m */; };
@@ -19,14 +19,14 @@
 		AF94FAC91D4925E000C0B5A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF94FAC71D4925E000C0B5A3 /* LaunchScreen.storyboard */; };
 		AF94FB461D4E58C200C0B5A3 /* img-pok.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF94FB451D4E58C200C0B5A3 /* img-pok.jpg */; };
 		AF94FB491D4E628700C0B5A3 /* CellType01.m in Sources */ = {isa = PBXBuildFile; fileRef = AF94FB481D4E628700C0B5A3 /* CellType01.m */; };
-		AFE72BE31D6F6D9200A2FF70 /* stopWatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE72BE21D6F6D9200A2FF70 /* stopWatchVC.m */; };
+		AFE72BE31D6F6D9200A2FF70 /* StopwatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE72BE21D6F6D9200A2FF70 /* StopwatchVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF15BDC31D63AA5000780504 /* number-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "number-1.png"; sourceTree = "<group>"; };
 		AF15BDC41D63AA5000780504 /* number-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "number-2.png"; sourceTree = "<group>"; };
-		AF46EA751D99A03B004064DE /* stopWatchVC+StringsFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "stopWatchVC+StringsFormat.h"; sourceTree = "<group>"; };
-		AF46EA761D99A03B004064DE /* stopWatchVC+StringsFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "stopWatchVC+StringsFormat.m"; sourceTree = "<group>"; };
+		AF46EA751D99A03B004064DE /* StopwatchVC+StringsFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StopwatchVC+StringsFormat.h"; sourceTree = "<group>"; };
+		AF46EA761D99A03B004064DE /* StopwatchVC+StringsFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "StopwatchVC+StringsFormat.m"; sourceTree = "<group>"; };
 		AF67F63A1D8D4B2B00856F99 /* CircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleCell.h; sourceTree = "<group>"; };
 		AF67F63B1D8D4B2B00856F99 /* CircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleCell.m; sourceTree = "<group>"; };
 		AF94FAB61D4925E000C0B5A3 /* table-01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "table-01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,8 +42,8 @@
 		AF94FB451D4E58C200C0B5A3 /* img-pok.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-pok.jpg"; sourceTree = "<group>"; };
 		AF94FB471D4E628700C0B5A3 /* CellType01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellType01.h; sourceTree = "<group>"; };
 		AF94FB481D4E628700C0B5A3 /* CellType01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellType01.m; sourceTree = "<group>"; };
-		AFE72BE11D6F6D9200A2FF70 /* stopWatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stopWatchVC.h; sourceTree = "<group>"; };
-		AFE72BE21D6F6D9200A2FF70 /* stopWatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stopWatchVC.m; sourceTree = "<group>"; };
+		AFE72BE11D6F6D9200A2FF70 /* StopwatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchVC.h; sourceTree = "<group>"; };
+		AFE72BE21D6F6D9200A2FF70 /* StopwatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +84,10 @@
 				AF94FB481D4E628700C0B5A3 /* CellType01.m */,
 				AF67F63A1D8D4B2B00856F99 /* CircleCell.h */,
 				AF67F63B1D8D4B2B00856F99 /* CircleCell.m */,
-				AFE72BE11D6F6D9200A2FF70 /* stopWatchVC.h */,
-				AFE72BE21D6F6D9200A2FF70 /* stopWatchVC.m */,
-				AF46EA751D99A03B004064DE /* stopWatchVC+StringsFormat.h */,
-				AF46EA761D99A03B004064DE /* stopWatchVC+StringsFormat.m */,
+				AFE72BE11D6F6D9200A2FF70 /* StopwatchVC.h */,
+				AFE72BE21D6F6D9200A2FF70 /* StopwatchVC.m */,
+				AF46EA751D99A03B004064DE /* StopwatchVC+StringsFormat.h */,
+				AF46EA761D99A03B004064DE /* StopwatchVC+StringsFormat.m */,
 				AF94FAC21D4925E000C0B5A3 /* Main.storyboard */,
 				AF94FAC51D4925E000C0B5A3 /* Assets.xcassets */,
 				AF94FAC71D4925E000C0B5A3 /* LaunchScreen.storyboard */,
@@ -192,8 +192,8 @@
 				AF94FAC11D4925E000C0B5A3 /* ViewController.m in Sources */,
 				AF94FABE1D4925E000C0B5A3 /* AppDelegate.m in Sources */,
 				AF94FB491D4E628700C0B5A3 /* CellType01.m in Sources */,
-				AF46EA771D99A03B004064DE /* stopWatchVC+StringsFormat.m in Sources */,
-				AFE72BE31D6F6D9200A2FF70 /* stopWatchVC.m in Sources */,
+				AF46EA771D99A03B004064DE /* StopwatchVC+StringsFormat.m in Sources */,
+				AFE72BE31D6F6D9200A2FF70 /* StopwatchVC.m in Sources */,
 				AF94FABB1D4925E000C0B5A3 /* main.m in Sources */,
 				AF67F63C1D8D4B2B00856F99 /* CircleCell.m in Sources */,
 			);

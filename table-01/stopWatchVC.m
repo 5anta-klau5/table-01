@@ -1,28 +1,28 @@
 //
-//  stopWatchVC.m
+//  StopwatchVC.m
 //  table-01
 //
 //  Created by Serhii Serhiienko on 8/25/16.
 //  Copyright © 2016 Serhii Serhiienko. All rights reserved.
 //
 
-#import "stopWatchVC.h"
+#import "StopwatchVC.h"
 #import "CircleCell.h"
 #import "stopWatchVC+StringsFormat.h"
 
-@implementation stopWatchVC
+@implementation StopwatchVC
 {
     NSMutableArray *circleList;
 }
 
 typedef enum: NSUInteger {
-    ready,
-    started,
-    paused
-} Stage;
+    StopwatchStateReady,
+    StopwatchStateStarted,
+    StopwatchStatePaused
+} StopwatchStateType;
 
 //BOOL started = FALSE;
-Stage watchStage = ready;
+StopwatchStateType watchStage = StopwatchStateReady;
 double startTime;
 double beforeStopTime = 0.0;
 double beforeStopCircleTime = 0.0;
@@ -46,8 +46,8 @@ double lastCircleTime = 0.0;
 }
 
 - (void)startStopCount {
-    if (watchStage == ready || watchStage == paused) {
-        watchStage = started;
+    if (watchStage == StopwatchStateReady || watchStage == StopwatchStatePaused) {
+        watchStage = StopwatchStateStarted;
         [self startTimer];
 //        [self.startStopBtn setTitle:@"Pause" forState:UIControlStateNormal];
 //        [self.startStopBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -59,7 +59,7 @@ double lastCircleTime = 0.0;
         return;
     }
 
-    if (watchStage == started) {
+    if (watchStage == StopwatchStateStarted) {
         double stopTime = [NSDate timeIntervalSinceReferenceDate];
         beforeStopTime += stopTime - startTime;
         beforeStopCircleTime += stopTime - lastCircleTime;
@@ -70,14 +70,14 @@ double lastCircleTime = 0.0;
 //        
 //        [self.resetBtn setTitle:@"Reset" forState:UIControlStateNormal];
 //        [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        watchStage = paused;
+        watchStage = StopwatchStatePaused;
         [self changeButtons];
         return;
     }
 }
 
 - (void)resetCount {
-    if (watchStage == started) {
+    if (watchStage == StopwatchStateStarted) {
 //        NSLog(@"%@", self.circleTimeText.text);
         [circleList addObject:self.circleTimeText.text];
 //        NSLog(@"%@", circleList);
@@ -86,7 +86,7 @@ double lastCircleTime = 0.0;
         beforeStopCircleTime = 0.0;
     }
     
-    if (watchStage == paused) {
+    if (watchStage == StopwatchStatePaused) {
     
         [self stopTimer];
         startTime = 0.0;
@@ -102,7 +102,7 @@ double lastCircleTime = 0.0;
 //                                                      blue:85/255.0
 //                                                     alpha:1.0] forState:UIControlStateNormal];
 //        self.resetBtn.enabled = NO;
-        watchStage = ready;
+        watchStage = StopwatchStateReady;
         [self changeButtons];
         [self.watchText setText:@"00:00.00"];
         [self.circleTimeText setText:@"00:00.00"];
@@ -111,7 +111,7 @@ double lastCircleTime = 0.0;
 }
 
 - (void)changeButtons {
-    if (watchStage == started) {
+    if (watchStage == StopwatchStateStarted) {
         [self.startStopBtn setTitle:@"Pause" forState:UIControlStateNormal];
         [self.startStopBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         
@@ -120,7 +120,7 @@ double lastCircleTime = 0.0;
         [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     
-    if (watchStage == paused) {
+    if (watchStage == StopwatchStatePaused) {
         [self.startStopBtn setTitle:@"Resume" forState:UIControlStateNormal];
         [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
         
@@ -128,7 +128,7 @@ double lastCircleTime = 0.0;
         [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     
-    if (watchStage == ready) {
+    if (watchStage == StopwatchStateReady) {
         [self.startStopBtn setTitle:@"Start" forState:UIControlStateNormal];
         [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
         
@@ -161,7 +161,7 @@ double lastCircleTime = 0.0;
 }
 
 - (void)ticTac {
-    if (watchStage == started) {
+    if (watchStage == StopwatchStateStarted) {
         double currentTime = [NSDate timeIntervalSinceReferenceDate];
         double totalSeconds = currentTime - startTime + beforeStopTime;
 //        double seconds = fmod(totalSeconds, 60.0);
