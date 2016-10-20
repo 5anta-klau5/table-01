@@ -25,7 +25,7 @@ typedef enum:NSUInteger {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     count++;
-    [self setTitle:[NSString stringWithFormat:@"Page #%d", count]];
+    [self setTitle:[NSString stringWithFormat:NSLocalizedString(@"Page #%d", nil) , count]];
     
 }
 
@@ -60,8 +60,8 @@ typedef enum:NSUInteger {
     
     if (type == WebCellType) {
         CellType01 *cell = (CellType01 *)[tableView dequeueReusableCellWithIdentifier:@"CellType01" forIndexPath:indexPath];
-        cell.nameLabel.text = @"First name";
-        cell.subNameLabel.text = @"Subname 1st";
+        cell.nameLabel.text = NSLocalizedString(@"First name", nil);
+        cell.subNameLabel.text = NSLocalizedString(@"Subname", nil);
         cell.cellImageView.image = [UIImage imageNamed:@"img-pok.jpg"];
         cell.cellImageView.layer.cornerRadius = cell.cellImageView.frame.size.width / 2;
         cell.cellImageView.clipsToBounds = YES;
@@ -70,7 +70,7 @@ typedef enum:NSUInteger {
         return cell;
     } else {
         UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CellType02" forIndexPath:indexPath];
-        cell.textLabel.text = [NSString stringWithFormat:@"Some cell %ld", (long)indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Some cell %ld", nil) , (long)indexPath.row];
         return cell;
     }
     

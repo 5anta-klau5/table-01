@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  table-01
+
+  Created by Serhii Serhiienko on 10/20/16.
+  Copyright © 2016 Serhii Serhiienko. All rights reserved.
+*/
+
+//ViewController
+"Page #%d" = "Page #%d";
+"First name" = "First name";
+"Subname" = "Subname";
+"Some cell %ld" = "Some cell %ld";
+
+//StopwatchVC
+"Pause" = "Pause";
+"Circle" = "Circle";
+"Resume" = "Resume";
+"Reset" = "Reset";
+"Start" = "Start";
+"Circle %ld" = "Circle %ld";

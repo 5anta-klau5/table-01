@@ -87,27 +87,27 @@ double lastCircleTime = 0.0;
 
 - (void)changeButtonsForState:(StopwatchStateType)state {
     if (state == StopwatchStateStart) {
-        [self.startStopBtn setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.startStopBtn setTitle:NSLocalizedString(@"Pause", nil) forState:UIControlStateNormal];
         [self.startStopBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         
         self.resetBtn.enabled = YES;
-        [self.resetBtn setTitle:@"Circle" forState:UIControlStateNormal];
+        [self.resetBtn setTitle:NSLocalizedString(@"Circle", nil) forState:UIControlStateNormal];
         [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     
     if (state == StopwatchStatePause) {
-        [self.startStopBtn setTitle:@"Resume" forState:UIControlStateNormal];
+        [self.startStopBtn setTitle:NSLocalizedString(@"Resume", nil) forState:UIControlStateNormal];
         [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
         
-        [self.resetBtn setTitle:@"Reset" forState:UIControlStateNormal];
+        [self.resetBtn setTitle:NSLocalizedString(@"Reset", nil) forState:UIControlStateNormal];
         [self.resetBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     
     if (state == StopwatchStateReset) {
-        [self.startStopBtn setTitle:@"Start" forState:UIControlStateNormal];
+        [self.startStopBtn setTitle:NSLocalizedString(@"Start", nil) forState:UIControlStateNormal];
         [self.startStopBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
         
-        [self.resetBtn setTitle:@"Circle" forState:UIControlStateNormal];
+        [self.resetBtn setTitle:NSLocalizedString(@"Circle", nil)  forState:UIControlStateNormal];
         [self.resetBtn setTitleColor:[UIColor colorWithRed:85/255.0
                                                      green:85/255.0
                                                       blue:85/255.0
@@ -164,7 +164,7 @@ double lastCircleTime = 0.0;
     long currentRow = indexPath.row;
     CircleCell *cell = (CircleCell *)[tableView dequeueReusableCellWithIdentifier:@"circleTimeCell"];
 
-    cell.circleNmbrTxt.text = [NSString stringWithFormat:@"Circle %ld", itemsCount - currentRow];
+    cell.circleNmbrTxt.text = [NSString stringWithFormat:NSLocalizedString(@"Circle %ld", nil), itemsCount - currentRow];
     cell.circleTimeTxt.text = [circleList objectAtIndex:itemsCount - currentRow - 1];
     return cell;
 }

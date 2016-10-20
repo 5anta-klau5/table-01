@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "00:00.00"; ObjectID = "1EB-mT-fNN"; */
+"1EB-mT-fNN.text" = "00:00.00";
+
+/* Class = "UIButton"; normalTitle = "Circle"; ObjectID = "5Km-5F-9m4"; */
+"5Km-5F-9m4.normalTitle" = "Круг";
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "D9C-MS-EfX"; */
+"D9C-MS-EfX.title" = "Пункт 1";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NcN-La-VFz"; */
+"NcN-La-VFz.text" = "Ярлык";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "TFU-re-URz"; */
+"TFU-re-URz.title" = "Пункт 2";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "cXX-N4-N4F"; */
+"cXX-N4-N4F.text" = "Название;
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "jMz-hC-n8y"; */
+"jMz-hC-n8y.normalTitle" = "Старт";
+
+/* Class = "UILabel"; text = "00:00.00"; ObjectID = "nfB-DQ-d3k"; */
+"nfB-DQ-d3k.text" = "00:00.00";
+
+/* Class = "UILabel"; text = "00:00.00"; ObjectID = "no1-m2-4LK"; */
+"no1-m2-4LK.text" = "00:00.00";
+
+/* Class = "UILabel"; text = "Circle №999"; ObjectID = "zHr-WQ-UHv"; */
+"zHr-WQ-UHv.text" = "Круг №999";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zn6-Vn-qgp"; */
+"zn6-Vn-qgp.text" = "Ярлык";
