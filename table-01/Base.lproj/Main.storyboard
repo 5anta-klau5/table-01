@@ -66,7 +66,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMz-hC-n8y">
-                                <rect key="frame" x="65" y="165" width="100" height="30"/>
+                                <rect key="frame" x="35" y="165" width="130" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="0.054753454030000002" green="0.7062336387" blue="0.02664108854" alpha="1" colorSpace="calibratedRGB"/>

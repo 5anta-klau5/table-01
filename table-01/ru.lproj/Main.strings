@@ -15,7 +15,7 @@
 "TFU-re-URz.title" = "Пункт 2";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "cXX-N4-N4F"; */
-"cXX-N4-N4F.text" = "Название;
+"cXX-N4-N4F.text" = "Название";
 
 /* Class = "UIButton"; normalTitle = "Start"; ObjectID = "jMz-hC-n8y"; */
 "jMz-hC-n8y.normalTitle" = "Старт";
